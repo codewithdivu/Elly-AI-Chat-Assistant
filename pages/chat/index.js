@@ -79,7 +79,14 @@ const ChatPage = () => {
             <button className="sidebar-footer-btn">New</button>
           </div>
           <div className="sidebar-footer-item">
-            <i style={{ marginLeft: "-1.8rem" }} className="fa fa-user" />
+            {/* <i style={{ marginLeft: "-1.8rem" }} className="fa fa-user" /> */}
+            <img
+              style={{ marginLeft: "-2rem" }}
+              src="/images/divu.jpg"
+              alt="Avatar"
+              className="avatar"
+            />
+
             <p style={{ marginLeft: "-4.5rem" }}>Divyesh Mavadiya</p>
             <i
               style={{ marginLeft: "-1rem" }}
@@ -103,7 +110,40 @@ const ChatPage = () => {
         </div>
       </div>
 
-      <div className="main">Main Container</div>
+      <div className="main">
+        <div className="user">
+          <div className="avatarPic">
+            <img src="/images/divu.jpg" alt="Avatar" class="avatarImg" />
+          </div>
+          <div className="main-content">
+            <p>How can i use your api for integrate you in my</p>
+          </div>
+        </div>
+        <div className="ai">
+          <div className="avatarPic">
+            <img src="/images/elly.png" alt="Avatar" class="avatarImg" />
+          </div>
+          <div className="main-content">
+            <p>
+              Im sorry, but as an AI language model, I dont have an API that can
+              be directly integrated into an app. However, OpenAI provides an
+              API for accessing their language models, including GPT-3, which
+              powers me. To use the OpenAI API, youll need to sign up for an API
+              key on the OpenAI website. Once you have your API key, you can use
+              it to make requests to the API using various programming languages
+              such as Python, Node.js, Java, and more. You can find detailed
+              documentation on how to use the OpenAI API in the official OpenAI
+              API documentation:
+              https://beta.openai.com/docs/api-reference/introduction. Please
+              note that accessing the OpenAI API may require some technical
+              knowledge and programming skills. If youre not familiar with
+              programming or API integration, you may want to consider hiring a
+              developer or consulting with someone who has experience in this
+              area to help you get started.
+            </p>
+          </div>
+        </div>
+      </div>
     </div>
   );
 };

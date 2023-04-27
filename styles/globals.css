@@ -2,6 +2,9 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: Söhne, ui-sans-serif, system-ui, -apple-system, "Segoe UI",
+    Roboto, Ubuntu, Cantarell, "Noto Sans", sans-serif, "Helvetica Neue", Arial,
+    "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
 }
 
 i {
@@ -19,23 +22,13 @@ i {
     "sidebar searchbar searchbar";
 }
 
-.main {
-  grid-area: main;
-  height: 90vh;
-  width: 81vw;
-  background-color: peru;
-}
-.sidebar-bottom {
-  grid-area: sidebar-bottom;
-}
-
 /* ------------SEARCHBAR----------------- */
 
 .searchbar {
   grid-area: searchbar;
   height: 10vh;
   width: 81vw;
-  background-color: orchid;
+  background-color: rgb(255, 255, 255);
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -173,4 +166,68 @@ i {
   border-radius: 10px;
   font-size: 1rem;
   cursor: pointer;
+}
+
+.avatar {
+  vertical-align: middle;
+  width: 22px;
+  height: 22px;
+}
+
+/* ------------MAIN-CONTAINER----------------- */
+
+.main {
+  grid-area: main;
+  height: 90vh;
+  width: 81vw;
+  background-color: gray;
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: center;
+}
+
+.user,
+.ai {
+  display: flex;
+  padding: 2rem 0;
+}
+
+.user {
+  background-color: rgb(255, 255, 255);
+  width: 81vw;
+  display: flex;
+  justify-content: center;
+}
+.ai {
+  background-color: #f7f7f7;
+  width: 81vw;
+  display: flex;
+  justify-content: center;
+}
+
+.avatarPic {
+  width: 4vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: start;
+}
+.avatarImg {
+  vertical-align: middle;
+  width: 35px;
+  height: 35px;
+}
+.main-content {
+  width: 50vw;
+  display: flex;
+  align-items: center;
+}
+.user p {
+  font-size: 17px;
+  font-weight: 400;
+}
+.ai p {
+  font-size: 17px;
+  font-weight: 400;
 }
