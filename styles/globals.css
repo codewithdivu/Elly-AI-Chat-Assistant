@@ -7,6 +7,27 @@
     "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
 }
 
+/* scrollbar  */
+/* Width of the scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Background of the scrollbar */
+::-webkit-scrollbar-track {
+  background: rgb(32, 33, 35);
+}
+
+/* Color of the scrollbar handle */
+::-webkit-scrollbar-thumb {
+  background-color: #888;
+}
+
+/* Hover style of the scrollbar handle */
+::-webkit-scrollbar-thumb:hover {
+  background-color: #555;
+}
+
 i {
   cursor: pointer;
 }
@@ -26,12 +47,12 @@ i {
 
 .searchbar {
   grid-area: searchbar;
-  height: 10vh;
+  height: 15vh;
   width: 81vw;
   background-color: rgb(255, 255, 255);
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-evenly;
   align-items: center;
 }
 
@@ -83,7 +104,6 @@ i {
   display: flex;
   flex-direction: column;
   align-items: center;
-  /* justify-content: space-between; */
 }
 
 .sidebar-header {
@@ -102,7 +122,7 @@ i {
   height: 3rem;
   color: white;
   background-color: rgb(32, 33, 35);
-  border: 0.5px solid white;
+  border: 0px solid white;
   cursor: pointer;
   margin-top: 0.7rem;
   font-size: 0.9rem;
@@ -123,6 +143,7 @@ i {
   align-items: center;
   margin-top: 1rem;
   height: 73vh;
+  overflow-y: scroll;
 }
 
 .sidebar-main-item {
@@ -140,7 +161,11 @@ i {
 }
 
 .sidebar-main-item:hover {
-  background-color: green;
+  background-color: rgba(0, 0, 0, 0.19);
+}
+
+.active {
+  background-color: rgb(53, 53, 65);
 }
 
 .sidebar-footer {
@@ -178,13 +203,15 @@ i {
 
 .main {
   grid-area: main;
-  height: 90vh;
+  height: 85vh;
   width: 81vw;
-  background-color: gray;
+  background-color: rgb(255, 255, 255);
   display: flex;
   flex-direction: column;
   justify-content: start;
   align-items: center;
+  overflow-y: scroll;
+  overflow-x: hidden;
 }
 
 .user,
@@ -230,4 +257,85 @@ i {
 .ai p {
   font-size: 17px;
   font-weight: 400;
+}
+
+/* ------------------------------------------------------------------- */
+.mircophone-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 50vh;
+}
+.microphone-icon-container {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background-image: linear-gradient(128deg, #ffffff, #647c88);
+  padding: 20px;
+  margin-right: 20px;
+  position: relative;
+  cursor: pointer;
+}
+.microphone-icon-container.listening::before {
+  content: "";
+  width: 100px;
+  height: 100px;
+  background-color: #ffffff81;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(1.4);
+  border-radius: 50%;
+  animation: listening infinite 1.5s;
+}
+@keyframes listening {
+  0% {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(1.4);
+  }
+}
+.microphone-icon {
+  width: 100%;
+  height: 100%;
+}
+.microphone-status {
+  font-size: 22px;
+  margin-right: 20px;
+  min-width: 215px;
+}
+.btn {
+  border: none;
+  padding: 10px 30px;
+  margin-right: 10px;
+  outline: none;
+  cursor: pointer;
+  font-size: 20px;
+  border-radius: 25px;
+  box-shadow: 0px 0px 10px 5px #ffffff1a;
+}
+.microphone-result-container {
+  text-align: center;
+  height: 50vh;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 30px;
+}
+.microphone-result-text {
+  margin-bottom: 30px;
+  width: 70vw;
+  overflow-y: auto;
+}
+.microphone-reset {
+  border: 1px solid #fff;
+  background: none;
+  color: white;
+  width: fit-content;
 }
