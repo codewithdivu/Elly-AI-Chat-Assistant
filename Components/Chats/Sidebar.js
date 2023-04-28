@@ -1,3 +1,4 @@
+import { sidebarContent } from "@/Constants/metadata";
 import React from "react";
 
 const Sidebar = ({ active, setActive }) => {
@@ -10,7 +11,7 @@ const Sidebar = ({ active, setActive }) => {
       </div>
 
       <div className="sidebar-main">
-        {Array.apply(null, Array(5)).map((item, index) => (
+        {sidebarContent.map((item, index) => (
           <div
             key={index}
             className={`sidebar-main-item ${index === active ? "active" : ""}`}
@@ -21,7 +22,7 @@ const Sidebar = ({ active, setActive }) => {
               className="fa fa-message"
             />
             <p style={{ marginLeft: index != active ? "-10rem" : "-2.5rem" }}>
-              How are you?
+              {item.content.slice(0, 15) + "..."}
             </p>
 
             {index === active && (

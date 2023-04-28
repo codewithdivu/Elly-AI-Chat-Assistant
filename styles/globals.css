@@ -32,6 +32,8 @@ i {
   cursor: pointer;
 }
 
+/* ----------------------------CHAT PAGE------------------------------------------ */
+
 .container {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
@@ -67,7 +69,6 @@ i {
   border: none;
   font-size: 17px;
   border-radius: 5px 0 0 5px;
-  /* box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); */
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
@@ -259,83 +260,132 @@ i {
   font-weight: 400;
 }
 
-/* ------------------------------------------------------------------- */
-.mircophone-container {
+/* ----------------------------DASHBOARD PAGE------------------------------------------ */
+
+.dashboardContainer {
+  display: grid;
+  grid-auto-flow: row dense;
+  grid-template-columns: 0.75fr 1.5fr 0.75fr;
+  grid-template-rows: 1fr 1fr 1fr;
+  gap: 0px 0px;
+  grid-template-areas:
+    "Navbar Navbar Navbar"
+    ". mainContent ."
+    "Footer Footer Footer";
+  height: 100vh;
+  width: 100vw;
+}
+
+/* -------Navbar------- */
+.Navbar {
+  grid-area: Navbar;
+  height: 8vh;
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 0.1px solid black;
+}
+
+.navbar-main {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+}
+
+nav {
+  background-color: rgb(255, 255, 255);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 999;
+  font-family: ColfaxAI, helvetica, sans-serif;
+  font-weight: bold;
+  font-size: 14px;
+  color: black;
+}
+
+nav img {
+  height: 32px;
+  width: auto;
+}
+
+.logo {
+  display: inline-block;
+  margin-left: 30px;
+}
+
+.nav-links {
+  display: inline-block;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  text-align: right;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.nav-links li {
+  display: inline-block;
+  margin: 0 10px;
+}
+
+.nav-links li a {
+  text-decoration: none;
+}
+
+.nav-links li a:hover {
+  border-bottom: 2px solid #fff;
+}
+
+/* -------Footer------- */
+
+.Footer {
+  grid-area: Footer;
   display: flex;
   justify-content: center;
   align-items: center;
   width: 100vw;
-  height: 50vh;
+  height: 40vh;
+  background-color: rgb(247, 247, 247);
 }
-.microphone-icon-container {
-  width: 100px;
-  height: 100px;
-  border-radius: 50%;
-  background-image: linear-gradient(128deg, #ffffff, #647c88);
-  padding: 20px;
-  margin-right: 20px;
-  position: relative;
-  cursor: pointer;
-}
-.microphone-icon-container.listening::before {
-  content: "";
-  width: 100px;
-  height: 100px;
-  background-color: #ffffff81;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%) scale(1.4);
-  border-radius: 50%;
-  animation: listening infinite 1.5s;
-}
-@keyframes listening {
-  0% {
-    opacity: 1;
-    transform: translate(-50%, -50%) scale(1);
-  }
-  100% {
-    opacity: 0;
-    transform: translate(-50%, -50%) scale(1.4);
-  }
-}
-.microphone-icon {
-  width: 100%;
-  height: 100%;
-}
-.microphone-status {
-  font-size: 22px;
-  margin-right: 20px;
-  min-width: 215px;
-}
-.btn {
-  border: none;
-  padding: 10px 30px;
-  margin-right: 10px;
-  outline: none;
-  cursor: pointer;
-  font-size: 20px;
-  border-radius: 25px;
-  box-shadow: 0px 0px 10px 5px #ffffff1a;
-}
-.microphone-result-container {
-  text-align: center;
-  height: 50vh;
 
+.footer-main {
+  display: flex;
+}
+
+.footer-main-first {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  align-items: center;
-  padding-bottom: 30px;
+  line-height: 3rem;
+  width: 15vw;
+  margin-left: 4rem;
+  text-align: center;
 }
-.microphone-result-text {
-  margin-bottom: 30px;
-  width: 70vw;
-  overflow-y: auto;
+.footer-main-first a {
+  text-decoration: none;
 }
-.microphone-reset {
-  border: 1px solid #fff;
-  background: none;
-  color: white;
-  width: fit-content;
+.footer-main-first p {
+  line-height: 1;
+  color: rgb(126, 126, 132);
+}
+
+/* -------DashContent------- */
+
+.mainContent {
+  grid-area: mainContent;
+  height: 52vh;
+  display: flex;
+  justify-content: start;
+}
+
+.mainContent-main {
+  margin-top: 2rem;
+  display: flex;
+  flex-direction: column;
+  /* justify-content: space-around; */
 }

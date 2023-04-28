@@ -2,6 +2,9 @@ import Head from "next/head";
 import Image from "next/image";
 import { Inter } from "next/font/google";
 import styles from "@/styles/Home.module.css";
+import Footer from "@/Components/Dashboard/Footer";
+import Navbar from "@/Components/Dashboard/Navbar";
+import DashContent from "@/Components/Dashboard/DashContent";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -14,7 +17,11 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <main className={`${styles.main} ${inter.className}`}>HOME PAGE</main>
+      <main className={`dashboardContainer ${inter.className}`}>
+        <Navbar />
+        <Footer />
+        <DashContent />
+      </main>
     </>
   );
 }

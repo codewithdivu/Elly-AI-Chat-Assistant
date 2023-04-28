@@ -32,3 +32,22 @@ export const contents = [
     ],
   },
 ];
+
+export const sidebarContent = [
+  {
+    id: 1,
+    content: "How are you?",
+  },
+  {
+    id: 1,
+    content: "Who is the founder of openai?",
+  },
+  {
+    id: 1,
+    content: "Tell me something about India army?",
+  },
+  {
+    id: 1,
+    content: "Would you be my friend?",
+  },
+];
