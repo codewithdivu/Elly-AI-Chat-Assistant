@@ -10,7 +10,9 @@ const DashContent = () => {
         <div className="mainContent-main-second">
           <h2>Go threw our availibility</h2>
           <div className="mainContent-main-second-features">
-            <div className="mainContent-main-second-features-item"></div>
+            <div className="mainContent-main-second-features-item">
+              
+            </div>
           </div>
         </div>
       </div>
