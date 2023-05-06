@@ -1,11 +1,10 @@
 import React, { useState } from "react";
 
 const AiBot = ({ data }) => {
-  console.log(typeof data.aiContent);
   return (
     <div className="ai">
       <div className="avatarPic">
-        <img src="/images/ai.png" alt="Avatar" class="avatarImg" />
+        <img src="/images/ai.png" alt="Avatar" className="avatarImg" />
       </div>
       <div className="main-content">
         <p>{data.aiContent[0]}</p>

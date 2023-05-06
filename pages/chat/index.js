@@ -1,7 +1,5 @@
 import React, { useState } from "react";
-import axios from "axios";
 import { Configuration, OpenAIApi } from "openai";
-import Sidebar from "@/Components/Chats/Sidebar";
 import SearchBar from "@/Components/Chats/SearchBar";
 import MainContent from "@/Components/Chats/MainContent";
 
@@ -9,6 +7,7 @@ const ChatPage = () => {
   const [prompt, setPrompt] = useState("");
   const [storedValues, setStoredValues] = useState([]);
   const [active, setActive] = useState(1);
+  console.log("res....", storedValues);
 
   const configuration = new Configuration({
     apiKey: process.env.API_KEY,
@@ -16,7 +15,8 @@ const ChatPage = () => {
   delete configuration.baseOptions.headers["User-Agent"];
   const openai = new OpenAIApi(configuration);
 
-  const handleGenerateResponse = async () => {
+  const handleGenerateAnswer = async () => {
+    console.log("generating.....");
     let options = {
       model: "text-davinci-003",
       temperature: 0,
@@ -48,8 +48,11 @@ const ChatPage = () => {
 
   return (
     <div className="container">
-      <Sidebar active={active} setActive={setActive} />
-      <SearchBar prompt={prompt} setPrompt={setPrompt} />
+      <SearchBar
+        prompt={prompt}
+        setPrompt={setPrompt}
+        handleGenerateAnswer={handleGenerateAnswer}
+      />
       <MainContent />
     </div>
   );

@@ -1,7 +1,7 @@
 import React from "react";
 import { useSpeechRecognition } from "react-speech-kit";
 
-const SearchBar = ({ prompt, setPrompt }) => {
+const SearchBar = ({ prompt, setPrompt, handleGenerateAnswer }) => {
   const { listen, stop } = useSpeechRecognition({
     onResult: (result) => {
       setPrompt(result);
@@ -20,7 +20,7 @@ const SearchBar = ({ prompt, setPrompt }) => {
           onChange={(event) => setPrompt(event.target.value)}
         />
         <button className="searchbar-btn">
-          <i class="fa fa-paper-plane"></i>
+          <i className="fa fa-paper-plane" onClick={handleGenerateAnswer}></i>
         </button>
         <button
           style={{ marginLeft: "1rem" }}
@@ -28,13 +28,13 @@ const SearchBar = ({ prompt, setPrompt }) => {
           onMouseDown={listen}
           onMouseUp={stop}
         >
-          <i class="fa fa-microphone"></i>
+          <i className="fa fa-microphone"></i>
         </button>
       </div>
       <div>
         <p>
-          Free Research Preview. ChatGPT may produce inaccurate information
-          about people, places, or facts.
+          Free Research Preview. Elly may produce inaccurate information about
+          people, places, or facts.or sometimes errors
         </p>
       </div>
     </div>
