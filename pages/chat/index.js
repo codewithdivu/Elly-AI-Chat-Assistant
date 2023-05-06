@@ -16,7 +16,7 @@ const ChatPage = () => {
   const openai = new OpenAIApi(configuration);
 
   const handleGenerateAnswer = async () => {
-    console.log("generating.....");
+    // console.log("generating.....");
     let options = {
       model: "text-davinci-003",
       temperature: 0,
