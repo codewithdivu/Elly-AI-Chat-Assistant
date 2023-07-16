@@ -16,15 +16,15 @@ const Navbar = () => {
           <a href="#">Help</a>
         </li>
 
-        <li>
+        {/* <li>
           <img
             alt="Profile"
             src="/images/divu.jpg"
             style={{ height: "2rem", borderRadius: "1rem" }}
           />
-        </li>
-        <li style={{ marginLeft: "-0.2rem" }}>
-          <a href="#">Personal</a>
+        </li> */}
+        <li>
+          <a href="#">Sign In</a>
         </li>
       </ul>
     </nav>
